@@ -6,4 +6,65 @@ A large amount of User Generated Content (UGC) is uploaded to the Internet daily
 
 
 
-**Code and dataset are coming soon....**
+## Usage
+
+### Requirement
+
+```
+torch >= 1.1.0
+torchvision >= 0.7.0
+python3
+```
+
+### Installation
+
+Build and install source code of roi_align_api and rod_align_api.
+
+```
+bash make_all.sh
+```
+
+### Preparation
+
+1. Download the dataset ([GAICv1](https://github.com/HuiZeng/Grid-Anchor-based-Image-Cropping-Pytorch) and [GAICv2](https://github.com/HuiZeng/Grid-Anchor-based-Image-Cropping-Pytorch))
+
+   ```
+   dataset
+    --GAIC
+          --annotations
+          --bbox
+          --images
+    --GAIC-journal
+          --annotations
+          --bbox
+          --images
+   ```
+
+2. Download the pre-trained weight ([GAICv1](https://drive.google.com/file/d/1FqUBO9MZNyaePDjyd6TEGz2AIKeNf1MU/view?usp=sharing) and [GAICv2](https://drive.google.com/file/d/1xtvNU0G7243ZKW29QR8Fpv4mFJn6a7TF/view?usp=sharing))
+
+### Inference
+
+```
+python test.py --cfg {path_to_config} --pretrained {path_to_pretrained_weight}
+```
+
+## Citation
+
+If you find the code useful, please consider citing our paper using the following BibTeX entry.
+
+```latex
+@article{su2024spatial,
+  title={Spatial-Semantic Collaborative Cropping for User Generated Content},
+  author={Su, Yukun and Cao, Yiwen and Deng, Jingliang and Rao, Fengyun and Wu, Qingyao},
+  journal={arXiv e-prints},
+  pages={arXiv--2401},
+  year={2024}
+}
+```
+
+## Acknowledge
+
+Our project references the codes in the following repos.
+
+- [GAIC](https://github.com/lld533/Grid-Anchor-based-Image-Cropping-Pytorch)
+- [Faster-RCNN](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome)
