@@ -41,7 +41,7 @@ def main():
     cfg = dict2namespace({**config, **vars(args)})
 
     dataset_dir = os.path.join(cfg.dataset_root, cfg.dataset)
-    data_loader_test = data.DataLoader(CropDataset(image_size=cfg.image_size, dataset_dir=dataset_dir, set='val'),
+    data_loader_test = data.DataLoader(CropDataset(image_size=cfg.image_size, dataset_dir=dataset_dir, set='test'),
                                        batch_size=cfg.val_batch, num_workers=cfg.num_workers, shuffle=False)
     net = SSC(cfg)
     if args.pretrained:
